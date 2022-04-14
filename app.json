@@ -4,7 +4,7 @@
     "slug": "whatsapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/sp.png",
+    "icon": "./assets/AppLogo.png",
     "splash": {
       "image": "./assets/splashScreenImage.png",
       "resizeMode": "contain",
