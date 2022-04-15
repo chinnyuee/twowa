@@ -7,16 +7,20 @@ import WhatsappWeb from "./onboarding/WhatsappWeb";
 import WhatsappSetting from "./onboarding/WhatsappSetting";
 import ScanQRCode from "./onboarding/ScanQRCode";
 import GetStarted from "./onboarding/GetStarted";
+import Setting from "./Setting/Setting";
+import Subscription from "./onboarding/Subscription";
 
 export default function OnboardingStack() {
     const Stack = createNativeStackNavigator();
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Welcome Screen" component={WelcomeScreen} />
+            <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
             <Stack.Screen name="WhatsappSetting" component={WhatsappSetting} />
             <Stack.Screen name="ScanQRCode" component={ScanQRCode} />
             <Stack.Screen name="WhatsappWeb" component={WhatsappWeb} />
             <Stack.Screen name="GetStarted" component={GetStarted} />
+            <Stack.Screen name="Setting" component={Setting} />
+            <Stack.Screen name="Subscription" component={Subscription} />
         </Stack.Navigator>
     )
 }

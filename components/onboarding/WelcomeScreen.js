@@ -1,26 +1,40 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { Entypo } from '@expo/vector-icons';
+import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 export default function WelcomeScreen({ navigation, route }) {
 
     return (
         <View style={styles.container} >
-            <View style={{ width: "90%", flex: 1, }}>
-                <TouchableOpacity>
+            <View style={{ width: "90%", flex: 1, position: "relative" }}>
+                <TouchableOpacity onPress={() => navigation.push("Subscription")}>
                     <Text style={styles.skip}>Skip</Text>
                 </TouchableOpacity>
-                <Image
-                    source={require("../../assets/onboardingImages/welcomeScreen.png")}
-                    style={{ marginTop: 16, marginBottom: 56 }}
-                />
+                <View style={{ alignItems: "center" }}>
+                    <Image
+                        source={require("../../assets/onboardingImages/welcomeScreen.png")}
+                        style={{ marginTop: 16, marginBottom: 56 }}
+                    />
+                </View>
+
                 <View >
                     <Text style={styles.heading}>Welcome To Two WA Chat</Text>
                     <Text style={styles.body}>Two WA Chat is simple and easy to use, swipe left to find out more</Text>
                 </View>
-                <TouchableOpacity onPress={() => navigation.push("WhatsappWeb")}
-                    style={styles.nextBtn}>
-                    <Text style={styles.nextText}>Next</Text>
-                </TouchableOpacity>
+
+                <View style={styles.btnContainer}>
+                    <View>
+                        <Entypo name="dot-single" size={35} color="#20D262" />
+                    </View>
+
+                    <TouchableOpacity onPress={() => navigation.push("WhatsappWeb")}
+                        style={styles.nextBtn}>
+                        <Text style={styles.nextText}>Next</Text>
+                    </TouchableOpacity>
+                </View>
+
+
             </View>
 
         </View>
@@ -32,7 +46,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         marginTop: 16,
-        position: "relative"
+        backgroundColor: "#F4F2F2"
     },
     skip: {
         fontFamily: "Nunito-Regular",
@@ -61,14 +75,18 @@ const styles = StyleSheet.create({
         borderColor: "#20D262",
         alignItems: "center",
         justifyContent: "center",
-        position: "absolute",
-        bottom: 30,
-        right: 0
-
     },
     nextText: {
         fontFamily: "Nunito-Bold",
         fontSize: 16,
         color: "#20D262"
+    },
+
+    btnContainer: {
+        position: "absolute",
+        bottom: 30,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: "100%"
     }
 })

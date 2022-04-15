@@ -1,25 +1,35 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import { Entypo } from '@expo/vector-icons';
 
 export default function ScanQRCode({ navigation }) {
     return (
         <View style={styles.container} >
-            <View style={{ width: "90%", flex: 1, }}>
-                <TouchableOpacity>
+            <View style={{ width: "90%", flex: 1, position: "relative" }}>
+                <TouchableOpacity onPress={() => navigation.push("Subscription")}>
                     <Text style={styles.skip}>Skip</Text>
                 </TouchableOpacity>
-                <Image
-                    source={require("../../assets/onboardingImages/ScanQRCode.png")}
-                    style={{ marginTop: 16, marginBottom: 56 }}
-                />
+                <View style={{ alignItems: "center" }}>
+                    <Image
+                        source={require("../../assets/onboardingImages/ScanQRCode.png")}
+                        style={{ marginTop: 16, marginBottom: 56 }}
+                    />
+                </View>
+
                 <View >
                     <Text style={styles.heading}>On This Device, Scan QR Code</Text>
                     <Text style={styles.body}>A QR code will be displayed in this App to connect to your Whatsapp Account. Scan the QR Code with your other Device</Text>
                 </View>
-                <TouchableOpacity onPress={() => navigation.push("GetStarted")}
-                    style={styles.nextBtn}>
-                    <Text style={styles.nextText}>Next</Text>
-                </TouchableOpacity>
+                <View style={styles.btnContainer}>
+                    <View style={{ marginLeft: 64 }}>
+                        <Entypo name="dot-single" size={35} color="#20D262" />
+                    </View>
+
+                    <TouchableOpacity onPress={() => navigation.push("GetStarted")}
+                        style={styles.nextBtn}>
+                        <Text style={styles.nextText}>Next</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
         </View>
@@ -32,7 +42,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         marginTop: 16,
-        position: "relative"
+        backgroundColor: "#F4F2F2"
     },
     skip: {
         fontFamily: "Nunito-Regular",
@@ -61,14 +71,17 @@ const styles = StyleSheet.create({
         borderColor: "#20D262",
         alignItems: "center",
         justifyContent: "center",
-        position: "absolute",
-        bottom: 30,
-        right: 0
-
     },
     nextText: {
         fontFamily: "Nunito-Bold",
         fontSize: 16,
         color: "#20D262"
+    },
+    btnContainer: {
+        position: "absolute",
+        bottom: 30,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: "100%"
     }
 })
