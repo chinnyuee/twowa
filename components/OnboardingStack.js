@@ -7,7 +7,7 @@ import WhatsappWeb from "./onboarding/WhatsappWeb";
 import WhatsappSetting from "./onboarding/WhatsappSetting";
 import ScanQRCode from "./onboarding/ScanQRCode";
 import GetStarted from "./onboarding/GetStarted";
-import Setting from "./Setting/Setting";
+import Setting from "./onboarding/Setting";
 import Subscription from "./onboarding/Subscription";
 
 export default function OnboardingStack() {

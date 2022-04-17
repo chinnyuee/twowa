@@ -1,9 +1,20 @@
-import React from "react"
-import { View, Text, StyleSheet } from 'react-native'
+import React, { useState } from "react"
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { AntDesign } from '@expo/vector-icons';
 
-export default function Pricing({ duration, price, text }) {
+export default function Pricing({ duration, price, text, defaultDuration }) {
+
     return (
-        <View style={styles.container}>
+        <View style={[styles.container,
+        defaultDuration === duration ?
+            { borderColor: "#20D262" } :
+            { borderColor: "white" }]
+        }>
+            {
+                defaultDuration === duration && <View style={styles.antDesign}>
+                    <AntDesign name="checkcircle" size={24} color="green" />
+                </View>
+            }
             <Text style={styles.duration}>{duration}</Text>
             <Text style={styles.price}>{price}</Text>
             <Text style={styles.text}>{text}</Text>
@@ -16,7 +27,16 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         width: 156,
         borderRadius: 16,
-        height: 128
+        height: 128,
+        borderWidth: 2,
+        position: "relative"
+
+    },
+    antDesign: {
+        width: "100%",
+        alignItems: "center",
+        position: "absolute",
+        top: -15
     },
     duration: {
         fontFamily: "Nunito-Regular",

@@ -1,19 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from "react-native"
 import { AntDesign } from '@expo/vector-icons';
 import Pricing from "./Pricing";
 
 
-export default function Subscription() {
+export default function Subscription({ navigation }) {
+    const [defaultDuration, setDefaultDuration] = useState("1 month")
     return (
         <ScrollView>
             <View style={styles.container}>
                 <View style={{ width: "90%", flex: 1, position: 'relative' }}>
                     <View style={{ marginTop: 12, }}>
                         <Text style={styles.title}>Two WA Chat</Text>
-                        <View style={{ position: "absolute", top: 0, right: 0 }}>
+                        <TouchableOpacity
+                            style={{ position: "absolute", top: 0, right: 0 }}
+                            onPress={() => navigation.push("Setting")}
+                        >
                             <AntDesign name="setting" size={24} color="black" />
-                        </View>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={{ alignItems: "center" }}>
@@ -28,17 +32,25 @@ export default function Subscription() {
                     </View>
 
                     <View style={styles.pricing}>
-                        <Pricing
-                            duration="1 month"
-                            price="9.99"
-                            text="Free trial 3 days"
-                        />
-                        <Pricing
-                            duration="1 year"
-                            price="84.99"
-                            text="Save around 30%"
-                        />
+                        <TouchableOpacity onPress={() => setDefaultDuration("1 month")}>
+                            <Pricing
+                                duration="1 month"
+                                price="9.99"
+                                text="Free trial 3 days"
+                                defaultDuration={defaultDuration}
+                            />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => setDefaultDuration("1 year")}>
+                            <Pricing
+                                duration="1 year"
+                                price="84.99"
+                                text="Save around 30%"
+                                defaultDuration={defaultDuration}
+                            />
+                        </TouchableOpacity>
                     </View>
+
                     <TouchableOpacity style={styles.continue}>
                         <Text style={styles.continueText}>Continue</Text>
                     </TouchableOpacity>
