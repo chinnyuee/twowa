@@ -22,8 +22,12 @@ export default function WhatsappWeb({ navigation }) {
                 </View>
 
                 <View style={styles.btnContainer}>
-                    <View style={{ marginLeft: 16 }}>
+                    <View style={{ flexDirection: "row" }}>
+                        <Entypo name="dot-single" size={35} color="white" />
                         <Entypo name="dot-single" size={35} color="#20D262" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
                     </View>
 
                     <TouchableOpacity onPress={() => navigation.push("WhatsappSetting")}

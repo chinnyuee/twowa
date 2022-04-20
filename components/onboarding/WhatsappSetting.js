@@ -21,8 +21,12 @@ export default function WhatsappSetting({ navigation }) {
                     <Text style={styles.body}>Go to Whatsapp, click the Settings Icon and look for your QR Code. We will use the QR Scanner to connect your account</Text>
                 </View>
                 <View style={styles.btnContainer}>
-                    <View style={{ marginLeft: 40 }}>
+                    <View style={{ flexDirection: "row" }}>
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
                         <Entypo name="dot-single" size={35} color="#20D262" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
                     </View>
 
                     <TouchableOpacity onPress={() => navigation.push("ScanQRCode")}

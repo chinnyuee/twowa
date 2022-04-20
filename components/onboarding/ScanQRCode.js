@@ -21,8 +21,12 @@ export default function ScanQRCode({ navigation }) {
                     <Text style={styles.body}>A QR code will be displayed in this App to connect to your Whatsapp Account. Scan the QR Code with your other Device</Text>
                 </View>
                 <View style={styles.btnContainer}>
-                    <View style={{ marginLeft: 64 }}>
+                    <View style={{ flexDirection: "row" }}>
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
                         <Entypo name="dot-single" size={35} color="#20D262" />
+                        <Entypo name="dot-single" size={35} color="white" />
                     </View>
 
                     <TouchableOpacity onPress={() => navigation.push("GetStarted")}

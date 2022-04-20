@@ -32,7 +32,9 @@ export default function Subscription({ navigation }) {
                     </View>
 
                     <View style={styles.pricing}>
-                        <TouchableOpacity onPress={() => setDefaultDuration("1 month")}>
+                        <TouchableOpacity onPress={() => setDefaultDuration("1 month")}
+                            style={{ width: "47%" }}
+                        >
                             <Pricing
                                 duration="1 month"
                                 price="9.99"
@@ -41,7 +43,9 @@ export default function Subscription({ navigation }) {
                             />
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => setDefaultDuration("1 year")}>
+                        <TouchableOpacity onPress={() => setDefaultDuration("1 year")}
+                            style={{ width: "47%" }}
+                        >
                             <Pricing
                                 duration="1 year"
                                 price="84.99"
@@ -51,7 +55,7 @@ export default function Subscription({ navigation }) {
                         </TouchableOpacity>
                     </View>
 
-                    <TouchableOpacity style={styles.continue}>
+                    <TouchableOpacity style={styles.continue} onPress={() => navigation.push("WhatsappPage")}>
                         <Text style={styles.continueText}>Continue</Text>
                     </TouchableOpacity>
                     <TouchableOpacity>
@@ -99,7 +103,7 @@ const styles = StyleSheet.create({
     pricing: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginTop: 16
+        marginTop: 16,
     },
     continue: {
         height: 56,

@@ -18,7 +18,11 @@ export default function GetStarted({ navigation }) {
                     <Text style={styles.body}>Congratulation, you have successfully connected your Whatsapp Client</Text>
                 </View>
                 <View style={styles.btnContainer}>
-                    <View style={{ marginLeft: 88 }}>
+                    <View style={{ flexDirection: "row" }}>
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
                         <Entypo name="dot-single" size={35} color="#20D262" />
                     </View>
 

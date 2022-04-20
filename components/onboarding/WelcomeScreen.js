@@ -24,8 +24,12 @@ export default function WelcomeScreen({ navigation, route }) {
                 </View>
 
                 <View style={styles.btnContainer}>
-                    <View>
+                    <View style={{ flexDirection: "row" }}>
                         <Entypo name="dot-single" size={35} color="#20D262" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
+                        <Entypo name="dot-single" size={35} color="white" />
                     </View>
 
                     <TouchableOpacity onPress={() => navigation.push("WhatsappWeb")}

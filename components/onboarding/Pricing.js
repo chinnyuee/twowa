@@ -25,7 +25,7 @@ export default function Pricing({ duration, price, text, defaultDuration }) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "white",
-        width: 156,
+        // width: 156,
         borderRadius: 16,
         height: 128,
         borderWidth: 2,
