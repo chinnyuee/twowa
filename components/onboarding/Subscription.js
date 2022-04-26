@@ -8,6 +8,7 @@ import NoInternet from "./NoInternet";
 export default function Subscription({ navigation }) {
     const [defaultDuration, setDefaultDuration] = useState("1 month");
     const [isConnectedToInternet, setIsConnectedToInternet] = useState(false);
+    const [error, setErrorMessage] = useState(false);
 
     useEffect(
         async () => {
@@ -17,11 +18,11 @@ export default function Subscription({ navigation }) {
         , [])
 
     return (
-        <ScrollView>
+        <ScrollView style={{}}>
             <View style={styles.container}>
                 <View style={{ width: "90%", flex: 1, position: 'relative' }}>
                     {
-                        !isConnectedToInternet ?
+                        isConnectedToInternet ?
                             <>
                                 <View style={{ marginTop: 12, }}>
                                     <Text style={styles.title}>Two WA Chat</Text>

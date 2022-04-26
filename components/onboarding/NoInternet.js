@@ -4,9 +4,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native"
 
 export default function NoInternet() {
     return (
-        <View style={{ flex: 1, position: "relative" }}>
-            <Text>No internet</Text>
-
+        <View style={{ position: "relative" }}>
             <View style={{ alignItems: "center" }}>
                 <Image
                     source={require("../../assets/onboardingImages/NoInternet.png")}
@@ -33,6 +31,7 @@ const styles = StyleSheet.create({
         borderColor: "#20D262",
         alignItems: "center",
         justifyContent: "center",
+        marginTop: 100
         // position: 'absolute',
         // bottom: 0
     },
